@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<StackPane stylesheets="/dark-theme.css" xmlns="http://javafx.com/javafx/1.8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.App">
+   <VBox>
+       <HBox>
+           <JFXTextField fx:id="pathInput" HBox.hgrow="ALWAYS" />
+           <JFXButton fx:id="startButton" text="Start" disable="true"/>
+           <JFXButton fx:id="findButton" text="Find"/>
+       </HBox>
+
+       <JFXTabPane fx:id="tabPane" VBox.vgrow="ALWAYS">
+           <Tab text="Preview">
+               <StackPane fx:id="tableContainer" VBox.vgrow="ALWAYS">
+                   <TableView fx:id="previewTable" >
+                       <columns>
+                           <TableColumn text="Team" fx:id="teamNameColumn"/>
+                           <TableColumn text="X" fx:id="teamXLocation"/>
+                           <TableColumn text="Y" fx:id="teamYLocation"/>
+                       </columns>
+                   </TableView>
+               </StackPane>
+           </Tab>
+           <Tab text="Visualize" disable="true">
+               <StackPane fx:id="viewContainer" VBox.vgrow="ALWAYS" style="-fx-background-color: white;"/>
+           </Tab>
+       </JFXTabPane>
+   </VBox>
+</StackPane>
